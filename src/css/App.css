@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+  padding: 0px;
+  margin: 0px;
+  color:white;
+  font-family: Montserrat;
+}
+.main-box{
+  height: 100vh;
+  background-color:#2b272a;
+}
