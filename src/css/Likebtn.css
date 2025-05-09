@@ -1,0 +1,12 @@
+.overlay{
+   position: absolute;
+   top: 15px;
+   left: 15px;
+}
+.like-btn{
+    background:none;
+    border:none;
+}
+.like-btn:hover{
+    cursor: pointer;
+}

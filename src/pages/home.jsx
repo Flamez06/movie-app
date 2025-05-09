@@ -1,21 +1,34 @@
 import MovieCard from "../components/Card"
 import "../css/Home.css"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { getPopMovie, searchPopMovie } from "../services/Api"
+
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("")
-
+    const [movies, setMovies] = useState([])
+    useEffect(() => {
+        const loadPopMovie = async () => {
+            try {
+                const popMovie = await getPopMovie()
+                setMovies(popMovie)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        loadPopMovie() 
+    }, [])
+    
     const searchmovie = (e) => {
         e.preventDefault()
-        alert(searchQuery)
+        const loadSearchMovie = async () => {
+            const searchMovie= await searchPopMovie(searchQuery)
+            setMovies(searchMovie)
+        }
+        loadSearchMovie()
         setSearchQuery("")
     }
-
-    const movies = [
-        { id: 1, title: "John Wick", desc: "God" },
-        { id: 2, title: "Interstellar", desc: "Space" },
-        { id: 3, title: "Death", desc: "Scary" },
-    ]
+    
 
     return (
         <div className="home-page">

@@ -2,10 +2,10 @@
 *{
   padding: 0px;
   margin: 0px;
-  color:white;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
   font-family: Montserrat;
 }
-.main-box{
-  height: 100vh;
+body{
   background-color:#2b272a;
 }

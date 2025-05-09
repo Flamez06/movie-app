@@ -1,20 +1,17 @@
 import "../css/Card.css"
+import Likebtn from "./Likebtn"
+import { useState } from "react"
 function MovieCard({movie}) {
-  const button = () => {
-    alert("liked")
-  };
-
+  const [btn,setBtn] = useState(0)
   return (
     <div className="movie-box">
       <div className="movie-poster">
-        <img src={movie.url} alt={movie.title} />
-        <div className="overlay">
-          <button onClick={button}>❤️</button>
-        </div>
+        <Likebtn movie={movie}></Likebtn> 
+        <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt={movie.title} />
       </div>
-      <div className="movie-details">
+      <div className="movie-details"> 
         <h3>{movie.title}</h3>
-        <p>{movie.desc}</p>
+        <div className="txt-wrap"><p>{movie.overview}</p></div>  
       </div>
     </div>
   )
